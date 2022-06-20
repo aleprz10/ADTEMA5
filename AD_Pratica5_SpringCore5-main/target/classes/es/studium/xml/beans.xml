@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- Nos permite utilizar las anotaciones en el proyecto -->
+	<context:annotation-config /><!-- No es necesario ponerla -->
+	<context:component-scan
+		base-package="es.studium.practicaV"></context:component-scan>
+	<bean id="casa" class="es.studium.practicaV.Casa">
+	</bean>
+
+	<bean id="habitacion" class="es.studium.practicaV.Habitacion">
+		<property name="nombreHabitacion" value="12">
+		</property>
+		<property name="pisoHabitacion" value="3">
+		</property>
+		<property name="tieneVentana" value="true">
+		</property>
+		<property name="persona" ref="persona">
+		</property>
+	</bean>
+	
+	<bean id="habitacion2" class="es.studium.practicaV.Habitacion">
+		<property name="nombreHabitacion" value="40">
+		</property>
+		<property name="pisoHabitacion" value="10">
+		</property>
+		<property name="tieneVentana" value="true">
+		</property>
+		<property name="persona" ref="persona2">
+		</property>
+	</bean>
+	
+	<bean id="persona" class="es.studium.practicaV.Persona">
+		<property name="nombre" value="María José">
+		</property>
+	</bean>
+	<bean id="persona2" class="es.studium.practicaV.Persona">
+		<property name="nombre" value="Maolo">
+		</property>
+	</bean>
+	<bean id="persona3" class="es.studium.practicaV.Persona">
+		<property name="nombre" value="Oselito">
+		</property>
+	</bean>
+
+</beans>
